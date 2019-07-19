@@ -7,7 +7,6 @@ class Application
     
     if req.path.match(/items/)
       requested_item = req.params["item"]
-      binding.pry
       if item = @@items.find{ |item| item.name == requested_item }
         resp.status = 200
         resp.write "#{item.price}"
