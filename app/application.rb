@@ -6,7 +6,7 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path.match(/items/)
-      requested_item = req.params["item"]
+      requested_item = req.path.split["item"]
       puts requested_item
       if item = @@items.find{ |item| item.name == requested_item }
         resp.status = 200
