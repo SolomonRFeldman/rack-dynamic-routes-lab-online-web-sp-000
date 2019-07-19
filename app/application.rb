@@ -7,7 +7,7 @@ class Application
     
     if req.path.match(/items/)
       requested_item = req.params["item"]
-      if item = @@items
+      if item = @@items.find
     else
       resp.status = 404
     end
