@@ -9,7 +9,10 @@ class Application
       requested_item = req.params["item"]
       if item = @@items.find(requested_item)
         resp.status = 200
-        resp.
+        resp.write "#{item.price}"
+      else
+        resp.status = 400
+        
     else
       resp.status = 404
     end
